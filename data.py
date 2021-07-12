@@ -49,12 +49,12 @@ def mode(sorteddata):
             modedataforrange["155-165"] += occurance
         elif 165 < weight < 1755:
             modedataforrange["165-175"] += occurance
-        moderange, modeoccurace = 0, 0
-        for range, occurance in modedataforrange.items():
-            if occurance > modeoccurace:
-                moderange, modeoccurace = [int(range.split("-")[0]), int(range.split("-")[1])], occurance
-        mode = float((moderange[0] + moderange[1]) / 2)
-        print("Mode is: " + str(mode))
+    moderange, modeoccurace = 0, 0
+    for range, occurance in modedataforrange.items():
+        if occurance > modeoccurace:
+            moderange, modeoccurace = [int(range.split("-")[0]), int(range.split("-")[1])], occurance
+    mode = float((moderange[0] + moderange[1]) / 2)
+    print("Mode is: " + str(mode))
 
 with open('data.csv', newline = "") as f:
     reader = csv.reader(f)
